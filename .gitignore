@@ -11,3 +11,5 @@
 Debug/
 Release/
 x64/
+bin/
+bin-inter/
