@@ -1,0 +1,3 @@
+﻿  Application.cpp
+C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\SandboxGame\src\Application.cpp(9,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  SandboxGame.vcxproj -> C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\bin\Debug-x64\SandboxGame\SandboxGame.exe
