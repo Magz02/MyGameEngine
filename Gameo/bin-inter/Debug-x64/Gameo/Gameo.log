@@ -1,2 +1,6 @@
-﻿  Application.cpp
+﻿  Log.cpp
+C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\Gameo\src\Gameo\Log.h(19,42): warning C4251: 'Gameo::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Gameo::Log'
+C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\Gameo\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\Gameo\src\Gameo\Log.h(20,42): warning C4251: 'Gameo::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Gameo::Log'
+C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\Gameo\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
   Gameo.vcxproj -> C:\Users\ormak\Documents\GitHub\MyGameEngine\Gameo\bin\Debug-x64\Gameo\Gameo.dll
