@@ -14,9 +14,9 @@ project "Gameo"
 	kind "SharedLib"
 	language "C++"
 
-	targetdir  ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir  ("bin-inter/" .. outputdir .. "/%{prj.name}")
-	
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-inter/" .. outputdir .. "/%{prj.name}")
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
@@ -29,35 +29,42 @@ project "Gameo"
 	filter "system:windows"
 		cppdialect "C++23"
 		staticruntime "On"
-		systemversion "10.0.22000.0"
-
+		systemversion "latest"
+		
 		defines {
 			"GM_PLATFORM_WINDOWS",
 			"GM_BUILD_DLL"
 		}
 
 		postbuildcommands {
-			("{COPY} " .. "%{cfg.buildtarget.relpath}" .. " ../bin/" .. outputdir .. "/SandboxGame")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/SandboxGame")
 		}
 
-		filter "configurations:Debug"
-			defines "GM_DEBUG"
-			symbols "On"
-
-				
-		filter "configurations:Release"
-			defines "GM_RELEASE"
-			optimize "On"
-
-		filter "configurations:Dist"
-			defines "GM_DIST"
-			optimize "On"
+	filter "configurations:Debug"
+		defines "GM_DEBUG"
+		symbols "On"
+		
+	filter "configurations:Release"
+		defines "GM_RELEASE"
+		optimize "On"
 			
+	filter "configurations:Dist"
+		defines "GM_DIST"
+		optimize "On"
+		
+	filter { "system:windows", "configurations:Release" }
+		buildoptions "/utf-8"
+
+	filter { "system:windows", "configurations:Debug" }
+		buildoptions "/utf-8"
 
 project "SandboxGame"
 	location "SandboxGame"
 	kind "ConsoleApp"
 	language "C++"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-inter/" .. outputdir .. "/%{prj.name}")
 
 	files {
 		"%{prj.name}/src/**.h",
@@ -76,8 +83,8 @@ project "SandboxGame"
 	filter "system:windows"
 		cppdialect "C++23"
 		staticruntime "On"
-		systemversion "10.0.22000.0"
-
+		systemversion "latest"
+		
 		defines {
 			"GM_PLATFORM_WINDOWS"
 		}
@@ -85,7 +92,7 @@ project "SandboxGame"
 	filter "configurations:Debug"
 		defines "GM_DEBUG"
 		symbols "On"
-			
+		
 	filter "configurations:Release"
 		defines "GM_RELEASE"
 		optimize "On"
@@ -93,3 +100,9 @@ project "SandboxGame"
 	filter "configurations:Dist"
 		defines "GM_DIST"
 		optimize "On"
+		
+	filter { "system:windows", "configurations:Release" }
+		buildoptions "/utf-8"
+
+	filter { "system:windows", "configurations:Debug" }
+		buildoptions "/utf-8"
