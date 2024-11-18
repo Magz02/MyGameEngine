@@ -2,12 +2,11 @@
 #include "Application.h"
 
 #include "Events/ApplicationEvent.h"
-#include "Log.h"
 
 namespace Gameo {
 
 	Application::Application() {
-		//ctor
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application() {
@@ -15,15 +14,8 @@ namespace Gameo {
 	}
 	
 	void Application::Run() {
-		WindowResizeEvent e(1200, 720);
-		if (e.IsInCategory(EventCategoryApplication)) {
-			GM_TRACE(e);
+		while (m_Running) {
+			m_Window->OnUpdate();
 		}
-
-		if (e.IsInCategory(EventCategoryInput)) {
-			GM_TRACE(e);
-		}
-		
-		while (true);
 	}
 }

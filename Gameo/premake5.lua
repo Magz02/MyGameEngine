@@ -9,6 +9,11 @@ workspace "Gameo"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Gameo/vendor/GLFW/include"
+
+include "Gameo/vendor/GLFW"
+
 project "Gameo"
 	location "Gameo"
 	kind "SharedLib"
@@ -27,7 +32,13 @@ project "Gameo"
 
 	includedirs {
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

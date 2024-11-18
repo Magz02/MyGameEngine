@@ -6,8 +6,7 @@
 
 namespace Gameo {
 
-	class GAMEO_API Log
-	{
+	class GAMEO_API Log {
 	public:
 		static void Init();
 

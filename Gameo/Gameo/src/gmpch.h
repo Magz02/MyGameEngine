@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Gameo/Log.h"
 
 #ifdef GM_PLATFORM_WINDOWS
 	#include <Windows.h>
