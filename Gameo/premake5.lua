@@ -38,7 +38,8 @@ project "Gameo"
 
 	links {
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
