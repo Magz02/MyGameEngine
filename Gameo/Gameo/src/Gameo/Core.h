@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../gmpch.h"
+
 #ifdef GM_PLATFORM_WINDOWS
 	#ifdef GM_BUILD_DLL
 		#define GAMEO_API __declspec(dllexport)

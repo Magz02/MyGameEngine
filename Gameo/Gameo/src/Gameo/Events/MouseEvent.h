@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Gameo {
 	class GAMEO_API MouseMovedEvent : public Event {
 	public:

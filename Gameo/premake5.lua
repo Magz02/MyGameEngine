@@ -17,6 +17,9 @@ project "Gameo"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-inter/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "gmpch.h"
+	pchsource "Gameo/src/gmpch.cpp"
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"

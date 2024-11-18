@@ -1,5 +1,3 @@
-#include <string>
-#include <sstream>
 #include <spdlog/fmt/ostr.h>
 
 #include "Event.h"
