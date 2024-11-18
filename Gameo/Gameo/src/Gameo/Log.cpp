@@ -1,6 +1,8 @@
 #include "gmpch.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
+#include "Gameo/Log.h"
+
 namespace Gameo {
 
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;

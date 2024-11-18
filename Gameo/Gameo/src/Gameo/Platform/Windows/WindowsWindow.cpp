@@ -1,6 +1,8 @@
 #include "gmpch.h"
 #include "WindowsWindow.h"
 
+#include "Gameo/Log.h"
+
 namespace Gameo {
 	static bool s_GLFWInitialized = false;
 

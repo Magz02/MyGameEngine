@@ -17,7 +17,6 @@ namespace Gameo {
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
-		Window window = new Window();
 	};
 	
 	// To be defined in CLIENT
